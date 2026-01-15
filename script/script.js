@@ -150,6 +150,10 @@ function atualizarRaridade() {
         };
     }, 80);
 
+    document.getElementById("tituloRaridade").textContent = raridade.nome;
+    setGlowRaridade(raridade.nome);
+    animarFlipRaridade();
+
     if (raridade.nome === "MASTER BALL") {
         document.body.style.backgroundColor = coresRaridade[raridade.nome];
         document.body.style.backgroundImage = "url(./image/fundoMasterBall.png)";
@@ -157,10 +161,6 @@ function atualizarRaridade() {
         document.body.style.backgroundColor = coresRaridade[raridade.nome];
         document.body.style.backgroundImage = "url(./image/fundo.png)";
     }
-
-    document.getElementById("tituloRaridade").textContent = raridade.nome;
-    setGlowRaridade(raridade.nome);
-    animarFlipRaridade();
 }
 
 
