@@ -157,7 +157,8 @@ body {
 /* Brilho por Raridade */
 .glow-wrapper {
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
+    z-index: 10;
 }
 
 /* =========================
@@ -174,6 +175,7 @@ body {
     filter: blur(50px);
     opacity: 0.9;
     animation: girarGlow 25s linear infinite;
+    will-change: transform, opacity;
     z-index: 1;
 }
 
@@ -333,4 +335,54 @@ body {
 
 .glow-negro {
     background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 40%, transparent 70%);
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.loader {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffc107;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: .3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: .3;
+    }
+}
+
+/* trava scroll enquanto carrega */
+body {
+    overflow: hidden;
+}
+
+body.loaded {
+    overflow: auto;
+}
+
+body.loaded #preloader {
+    display: none;
+}
+
+/* Resolver Imagem */
+#imagemDrop {
+    transition: opacity 0.2s ease;
 }

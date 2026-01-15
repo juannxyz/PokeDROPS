@@ -139,20 +139,22 @@ function atualizarContador() {
 // Atualiza raridade visual do drop
 function atualizarRaridade() {
     const raridade = descobrirRaridade(sorteAtual);
+    const img = document.getElementById("imagemDrop");
+
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+        img.src = "./image/" + raridade.img;
+        img.onload = () => {
+            img.style.opacity = "1";
+        };
+    }, 80);
+
     document.getElementById("tituloRaridade").textContent = raridade.nome;
-    document.getElementById("imagemDrop").src = "./image/" + raridade.img;
-    animarFlipRaridade();
-
-    if (raridade.nome !== "MASTER BALL") {
-        document.body.style.backgroundColor = coresRaridade[raridade.nome];
-    }
-    else {
-        document.body.style.backgroundColor = coresRaridade[raridade.nome];
-        document.body.style.backgroundImage = "url(./image/fundoMasterBall.png)";
-    }
-
     setGlowRaridade(raridade.nome);
+    animarFlipRaridade();
 }
+
 
 // Anima flip da raridade
 function animarFlipRaridade() {
@@ -190,6 +192,33 @@ function explosaoEnergia() {
         star.classList.add("ativo");
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.images;
+    let loaded = 0;
+    const total = images.length;
+
+    if (total === 0) {
+        document.body.classList.add("loaded");
+        return;
+    }
+
+    for (let img of images) {
+        if (img.complete) {
+            loaded++;
+        } else {
+            img.addEventListener("load", check);
+            img.addEventListener("error", check);
+        }
+    }
+
+    function check() {
+        loaded++;
+        if (loaded === total) {
+            document.body.classList.add("loaded");
+        }
+    }
+});
 
 // ========================
 // - Ident -> EVENTOS / LISTENERS
