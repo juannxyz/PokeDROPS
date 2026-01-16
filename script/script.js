@@ -50,6 +50,8 @@ function sortearChave(raridadeNome) {
     return chave;
 }
 
+
+
 // ========================
 // - Ident -> FUNÇÕES DE JOGO
 // ========================
@@ -115,6 +117,15 @@ function mostrarRecompensa() {
     rodadaFinalizada = true;
     modalRecompensa.show();
 }
+
+function iniciarJogo() {
+    const qtd = parseInt(inputJogos.value);
+    if (!qtd || qtd <= 0) return;
+
+    resetarJogo(qtd);
+    modalInicio.hide();
+}
+
 
 // ========================
 // - Ident -> FUNÇÕES DE UI / INTERFACE
@@ -235,13 +246,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // Mostra modal de início ao carregar
 window.addEventListener("load", () => modalInicio.show());
 
-// Iniciar jogo ao clicar no botão
-btnIniciar.addEventListener("click", () => {
-    const qtd = parseInt(inputJogos.value);
-    if (!qtd || qtd <= 0) return;
-    resetarJogo(qtd);
-    modalInicio.hide();
+document.getElementById("inputJogos").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        iniciarJogo();
+    }
 });
+
+// Iniciar jogo ao clicar no botão
+btnIniciar.addEventListener("click", iniciarJogo);
 
 // Copiar chave
 btnCopiarChave.addEventListener("click", () => {
