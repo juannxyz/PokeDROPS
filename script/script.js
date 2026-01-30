@@ -1,7 +1,6 @@
 // ========================
 // - Ident -> VARIÁVEIS GLOBAIS
 // ========================
-const chances = document.getElementById("chances");
 const bolinhas = document.querySelectorAll("#chances span");
 const contador = document.getElementById("jogosContador");
 const glow = document.getElementById("glowEffect");
@@ -185,14 +184,12 @@ function animarFlipRaridade() {
 }
 
 function setGlowRaridade(raridade) {
-    glow.className = "glow-effect"; // limpa tudo
+    glow.className = "glow-effect";
 
-    if (raridade === "COBRE") glow.classList.add("glow-cobre");
-    if (raridade === "FERRO") glow.classList.add("glow-ferro");
-    if (raridade === "OURO") glow.classList.add("glow-ouro");
-    if (raridade === "RUBI") glow.classList.add("glow-rubi");
-    if (raridade === "DIAMANTE") glow.classList.add("glow-diamante");
-    if (raridade === "DIAMANTE NEGRO") glow.classList.add("glow-negro");
+    if (raridade === "POKE BALL") glow.classList.add("glow-poke");
+    if (raridade === "GREAT BALL") glow.classList.add("glow-great");
+    if (raridade === "ULTRA BALL") glow.classList.add("glow-ultra");
+    if (raridade === "MASTER BALL") glow.classList.add("glow-master");
 }
 
 function explosaoEnergia() {

@@ -313,28 +313,36 @@ body {
 /* =========================
    CORES POR RARIDADE
 ========================= */
-.glow-cobre {
-    background: radial-gradient(circle, rgba(87, 122, 228, 1) 0%, rgba(87, 122, 228, 0.6) 40%, transparent 70%);
+/* =========================
+   CORES POR RARIDADE (POKÉBALL)
+========================= */
+
+.glow-poke {
+    background: radial-gradient(circle,
+            rgba(255, 0, 0, 1) 0%,
+            rgba(255, 0, 0, 0.6) 40%,
+            transparent 70%);
 }
 
-.glow-ferro {
-    background: radial-gradient(circle, rgba(141, 56, 53, 1) 0%, rgba(141, 56, 53, 0.6) 40%, transparent 70%);
+.glow-great {
+    background: radial-gradient(circle,
+            rgba(0, 90, 255, 1) 0%,
+            rgba(0, 90, 255, 0.6) 40%,
+            transparent 70%);
 }
 
-.glow-ouro {
-    background: radial-gradient(circle, rgba(204, 136, 153, 1) 0%, rgba(204, 136, 153, 0.6) 40%, transparent 70%);
+.glow-ultra {
+    background: radial-gradient(circle,
+            rgba(160, 0, 255, 1) 0%,
+            rgba(160, 0, 255, 0.6) 40%,
+            transparent 70%);
 }
 
-.glow-rubi {
-    background: radial-gradient(circle, rgba(0, 153, 41, 1) 0%, rgba(0, 153, 41, 0.6) 40%, transparent 70%);
-}
-
-.glow-diamante {
-    background: radial-gradient(circle, rgba(255, 92, 0, 1) 0%, rgba(255, 92, 0, 0.6) 40%, transparent 70%);
-}
-
-.glow-negro {
-    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.7) 40%, transparent 70%);
+.glow-master {
+    background: radial-gradient(circle,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            transparent 70%);
 }
 
 /* Preloader */
